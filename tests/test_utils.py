@@ -10,6 +10,7 @@ class TestUtils:
         current_gameweek = await get_current_gameweek(fpl.session)
         assert isinstance(current_gameweek, int)
 
+    # this one isnt working-----------------------------------------
     @pytest.mark.asyncio
     async def test_team_converter(self, fpl):
         teams = await fpl.get_teams()
@@ -30,6 +31,7 @@ class TestUtils:
 
         assert chips == converted
 
+    # this one isnt working-----------------------------------------
     @pytest.mark.asyncio
     async def test_logged_in(self, fpl):
         await fpl.login()

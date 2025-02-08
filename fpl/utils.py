@@ -138,14 +138,15 @@ def short_name_converter(team_id):
     }
     return short_name_map[team_id]
 
-
+# not sure what number 5 is suppsoed to be-----------------------------------------
 def position_converter(position):
     """Converts a player's `element_type` to their actual position."""
     position_map = {
         1: "Goalkeeper",
         2: "Defender",
         3: "Midfielder",
-        4: "Forward"
+        4: "Forward",
+        5: "Substitute"
     }
     return position_map[position]
 

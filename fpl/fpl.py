@@ -563,7 +563,9 @@ class FPL:
 
         return H2HLeague(league, session=self.session)
 
-    async def login(self, email=None, password=None, cookie="eyJzIjogIld6VXNPRGd4TkRZek1EaGQ6MXRnOWtpOnJOb3VtRW5WcFVUTGtEdXV6V3Juc19US2g4LXp6Ri04ZDF4SWI2YTAyUlEiLCAidSI6IHsiaWQiOiA4ODE0NjMwOCwgImZuIjogIkphY2siLCAibG4iOiAiQmVsbGFteSIsICJmYyI6IG51bGx9fQ=="):
+    #---------------------------------------------------------------------------------------------
+    # HELP NEEDED HERE
+    async def login(self, email=None, password=None, cookie=None):
         """Returns a requests session with FPL login authentication.
 
         :param string email: Email address for the user's Fantasy Premier
@@ -589,7 +591,7 @@ class FPL:
         if not cookie:
             cookie = os.getenv('FPL_COOKIE')
         headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         }
         if cookie is not None:
             headers['Cookie'] = cookie

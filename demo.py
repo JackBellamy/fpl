@@ -6,26 +6,12 @@ from prettytable import PrettyTable
 
 from fpl import FPL
 
-
 async def main():
     async with aiohttp.ClientSession() as session:
         fpl = FPL(session)
-        players = await fpl.get_players()
+        login = await fpl.login(email="jbella753@yahoo.com", password="Fishing2647!",cookie="eyJzIjogIld6VXNPRGd4TkRZek1EaGQ6MXRnOWtpOnJOb3VtRW5WcFVUTGtEdXV6V3Juc19US2g4LXp6Ri04ZDF4SWI2YTAyUlEiLCAidSI6IHsiaWQiOiA4ODE0NjMwOCwgImZuIjogIkphY2siLCAibG4iOiAiQmVsbGFteSIsICJmYyI6IG51bGx9fQ==")
 
-    top_performers = sorted(
-        players, key=lambda x: x.goals_scored + x.assists, reverse=True)
-
-    player_table = PrettyTable()
-    player_table.field_names = ["Player", "£", "G", "A", "G + A"]
-    player_table.align["Player"] = "l"
-
-    for player in top_performers[:10]:
-        goals = player.goals_scored
-        assists = player.assists
-        player_table.add_row([player.web_name, f"£{player.now_cost / 10}",
-                            goals, assists, goals + assists])
-
-    print(player_table)
+    print(login)
 
 if __name__ == "__main__":
     if sys.version_info >= (3, 7):
@@ -35,3 +21,32 @@ if __name__ == "__main__":
         # Python 3.6
         loop = asyncio.get_event_loop()
         loop.run_until_complete(main())
+
+# async def main():
+#     async with aiohttp.ClientSession() as session:
+#         fpl = FPL(session)
+#         players = await fpl.get_players()
+
+#     top_performers = sorted(
+#         players, key=lambda x: x.goals_scored + x.assists, reverse=True)
+
+#     player_table = PrettyTable()
+#     player_table.field_names = ["Player", "£", "G", "A", "G + A"]
+#     player_table.align["Player"] = "l"
+
+#     for player in top_performers[:10]:
+#         goals = player.goals_scored
+#         assists = player.assists
+#         player_table.add_row([player.web_name, f"£{player.now_cost / 10}",
+#                             goals, assists, goals + assists])
+
+#     print(player_table)
+
+# if __name__ == "__main__":
+#     if sys.version_info >= (3, 7):
+#         # Python 3.7+
+#         asyncio.run(main())
+#     else:
+#         # Python 3.6
+#         loop = asyncio.get_event_loop()
+#         loop.run_until_complete(main())

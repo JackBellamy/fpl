@@ -99,11 +99,11 @@ def team_converter(team_id):
         11: "Leicester",
         12: "Liverpool",
         13: "Man City",
-        14: "Man Utd",
+        14: "Man United",
         15: "Newcastle",
         16: "Nott'm Forest",
         17: "Southampton",
-        18: "Spurs",
+        18: "Tottenham",
         19: "West Ham",
         20: "Wolves",
         None: None

@@ -33,7 +33,6 @@ async def main():
             # Format the datetime object to the desired format: %d-%m
             formatted_date = date_obj.strftime("%d-%m")
             striped_fixtures.append([formatted_date, time.strip(), home_team.strip(), away_team.strip()])
-
             # Writing to CSV
         with open("fixtures.csv", mode="w", newline="") as file:
             writer = csv.writer(file)

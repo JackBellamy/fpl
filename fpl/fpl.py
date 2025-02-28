@@ -191,8 +191,13 @@ class FPL:
         player_summary = await fetch(self.session, url)
 
         if return_json:
+            # print("returning json")
             return player_summary
 
+        # print("returning PlayerSummary: ", player_summary)
+        # print("\n")
+        # print("PlayerSummary: ", PlayerSummary(player_summary))
+        # print("\n")
         return PlayerSummary(player_summary)
 
     async def get_player_summaries(self, player_ids, return_json=False):
